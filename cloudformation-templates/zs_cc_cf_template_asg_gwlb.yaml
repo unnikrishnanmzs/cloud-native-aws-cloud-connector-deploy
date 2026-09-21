@@ -1,5 +1,5 @@
 AWSTemplateFormatVersion: 2010-09-09
-Description: Zscaler Cloud Connector Starter Deployment Template with Auto Scaling and GWLB v1.3.4
+Description: Zscaler Cloud Connector Starter Deployment Template with Auto Scaling and GWLB v1.3.5
 
 Metadata:
   LICENSE: 'Apache License, Version 2.0'
@@ -314,6 +314,8 @@ Parameters:
           - m6i.large
           - c6i.large
           - c6in.large
+          - m7i.large
+          - m7i-flex.large
           - m5n.4xlarge
           - m6i.4xlarge
           - c6i.4xlarge
@@ -456,13 +458,15 @@ Rules:
               - m6i.large
               - c6i.large
               - c6in.large
+              - m7i.large
+              - m7i-flex.large
               - m5n.4xlarge
               - m6i.4xlarge
               - c6i.4xlarge
               - c6in.4xlarge
             - !Ref ZscalerAwsEc2InstanceType
         AssertDescription: >-
-          For small ZscalerCcInstanceSize, the Instance type must be one of t3.medium, c5a.large, m5n.large, m6i.large, c6i.large, c6in.large, m5n.4xlarge, m6i.4xlarge, c6i.4xlarge
+          For small ZscalerCcInstanceSize, the Instance type must be one of t3.medium, c5a.large, m5n.large, m6i.large, c6i.large, c6in.large, m7i.large, m7i-flex.large, m5n.4xlarge, m6i.4xlarge, c6i.4xlarge
   CCProvUrlNotEmpty:
     Assertions:
       - Assert: !Not
@@ -1155,7 +1159,7 @@ Outputs:
     Value: ""
   CloudConnectorTemplateVersion:
     Description: Cloud Connector Template Version
-    Value: 1.3.4
+    Value: 1.3.5
   ZscalerCcInstanceProfileInUse:
     Description: IAM role being used by the CcInstances
     Value: !If 

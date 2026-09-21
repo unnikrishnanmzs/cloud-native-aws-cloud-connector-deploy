@@ -1,3 +1,9 @@
+## 1.3.5 - 2026-09-18
+
+------------
+ENHANCEMENTS:
+* add m7i.large and m7i-flex.large EC2 instance types to CloudFormation templates
+
 ## 1.3.4 - 2026-07-07
 
 ------------
